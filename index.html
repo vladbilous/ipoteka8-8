@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Bilous Vlad vladbilous17@gmail.com" />
+    <link
+      rel="stylesheet"
+      href="https://www.ukrgasbank.com/images/favicon.ico"
+      rel="icon"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="fonts/Circe/stylesheet.css" />
+    <!-- boottstrup -->
+    <!-- подключение css-файла -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+
+    <!-- подключение нужной версии jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- подключение js-файла -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/jquey.3.4.1.min.js"></script>
+    <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
+
+
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+    <!-- boottstrup -->
+    <title>Homecredit</title>
+    <link rel="stylesheet" href="css/ie.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="head_txt">
+        <!--        <img class="key tablet" src="img/bg2.png" alt="key">-->
+        <!--        <img class="car tablet" src="img/bg2.png" alt="car">-->
+        <img class="pc-ban" src="img/bg2.png" alt="car">
+        <img class="mob-ban" src="img/mob-ban.png" alt="car">
+
+      </div>
+<!--      <div class="wrapper">-->
+<!--        <div class="header_logo">-->
+          <!--        <img src="img\current-img\logo.png" alt="logo">-->
+<!--        </div>-->
+
+        <!--      <div class="head_list">-->
+        <!--        <div class="head-list-item">-->
+        <!--          <img src="img\current-img\yellow_icon1.png" alt="icon">-->
+        <!--          <p>при власному внеску від <span>40%</span><br>вартості авто - без довідки про доходи</p>-->
+        <!--        </div>-->
+        <!--        <div class="head-list-item">-->
+        <!--          <img src="img\current-img\yellow_icon2.png" alt="icon">-->
+        <!--          <p>рішення за <span>2</span> години</p>-->
+        <!--        </div>-->
+        <!--      </div>-->
+<!--      </div>-->
+    </header>
+    <div class="wrapper">
+      <div class="flex-container icons-container">
+        <div>
+          <img src="img/icon1.png" alt="gray-icon" />
+          <h4>
+           <span class="text-icon-small">
+            ШВИДКИЙ РОЗГЛЯД ЗАЯВКИ
+           </span>
+            <br />
+            від 1 дня
+          </h4>
+        </div>
+        <div>
+          <img src="img/icon2.png" alt="gray-icon" />
+          <h4>
+            <span>
+            ПЕРВИННИЙ ВНЕСОК
+            <br />
+          </span>
+            від 30% вартості житла
+          </h4>
+        </div>
+        <div>
+          <img src="img/icon3.png" alt="gray-icon" />
+          <h4>
+            <span>
+              ТЕРМІН КРЕДИТУ
+            </span>
+            <br />
+            до 20 років
+          </h4>
+        </div>
+      </div>
+      <div id="calculator">
+        <form action="#">
+          <h2>Калькулятор</h2>
+          <div class="error"></div>
+
+          <p style="margin-top: 20px">
+            <label for="car-payment">Вартість квартири, грн.</label>
+<!--            <span id="result"></span>-->
+            <input
+              type=" number"
+              onkeyup="checkCurr(this);  triadVartist()"
+              name="car-payment"
+              id="car-payment"
+              value="1 000 000"
+              class="test1"
+            />
+          </p>
+
+<!--          <p>-->
+<!--              <input class="numslider-value" id="amount2" type="number" step="1" min="0" max="25000000" value="1500000" name="amount2"/>-->
+<!--              <div id="result2"></div>-->
+<!--          </p>-->
+
+          <p style="display: none" class="stavka hidden">
+            <label>Ставка річних, %</label>
+            <span>13,99 %</span>
+          </p>
+
+          <p>
+            <label for="prepaid-expense">Аванс, грн.</label>
+<!--            <span id="result-avans"></span>-->
+
+            <input
+              type=" number"
+              onkeyup="checkCurr(this); triadAvans()"
+              name="prepaid-expense"
+              id="prepaid-expense"
+              value="300 000"
+              maxlength="14"
+            />
+          </p>
+
+          <p class="">
+            <label for="prepaid-expense">Сума кредиту, грн.</label>
+            <input
+              type=" number"
+              name="credit-sum"
+              id="credit-sum"
+              value="700 000"
+              readonly
+              style="background: transparent; color: #1c3968;"
+            />
+          </p>
+
+          <p>
+            <label for="month-rate">Термін кредитування, <br />міс.</label>
+            <input type="number" id="month-rate" max="252" value="240" />
+          </p>
+          <p  style="display: none" class="sele">
+            <label>Періоди кредитування</label>
+            <select class="aun-class">
+              <option value="1">1 рік</option>
+              <option value="2">2 рік, і більше</option>
+            </select>
+          </p>
+          <!-- <button type="button">Розрахувати</button> -->
+        </form>
+        <div class="percent-block pc tab">
+          <div class="circle-wrap">
+            <div class="circle-1" data-size="190" data-thickness="15">
+              <span class="number">12</span>
+            </div>
+            <span style="padding-bottom: 0;"
+              >Ваш місячний платіж на перший рік кредитування<sup>*</sup>
+
+            </span>
+            <span style="padding-top: 0;" class="clasic" id="clasic"></span>
+
+            <div class="circle-3 cir3" data-size="190" data-thickness="15">
+              <span class="number">12</span>
+            </div>
+            <span class="cir3" style="padding-bottom: 0;"
+              >Ваш місячний платіж з другого року кредитування<sup>**</sup>
+
+            </span>
+            <span style="padding-top: 0;" class="clasic" id="clasic3"></span>
+            <div class="circle-2" data-size="190" data-thickness="15">
+              <span class="number">12</span>
+            </div>
+            <span>Разові витрати на користь банку<sup>***</sup></span>
+            <!--          <span>Разові витрати, <span>на користь банку<sup>1</sup><br></span>-->
+          </div>
+        </div>
+        <div class="percent-block mob">
+          <div class="circle-wrap">
+            <div>
+              <div class="circle-1" data-size="140" data-thickness="12">
+                <span class="number">12</span>
+              </div>
+              <span style="padding-bottom: 0;"
+                >Ваш місячний платіж на перший рік кредитування<sup>*</sup>
+              </span>
+
+              <span style="padding-top: 0;" class="clasic" id="clasic2"></span>
+
+
+              <div class="circle-3 cir3" data-size="140" data-thickness="12">
+                <span class="number">12</span>
+              </div>
+              <span class="cir3" style="padding-bottom: 0;"
+              >Ваш місячний платіж з другого року кредитування<sup>**</sup>
+              </span>
+
+              <span style="padding-top: 0;" class="clasic" id="clasic3"></span>
+
+              <div class="circle-2" data-size="140" data-thickness="12">
+                <span class="number">12</span>
+              </div>
+              <!--            <span>Разові витрати, <br>на користь банку<br><sup>1</sup></span>-->
+              <span>Разові витрати на користь банку<sup>***</sup></span>
+            </div>
+          </div>
+        </div>
+        <p class="description" id="description">
+          <br />
+          *Розрахунок зроблений згідно програми кредитування «Супер ставка на житло»
+          (вторинний ринок)
+          <br />
+<!--          UIRD12M за останнє число попереднього місяця-->
+<!--          станом 10.07.2020-->
+          **Для обрахунку платежу за значення UIRD12M умовно приймався розмір 8,60%
+
+          <br />
+          *** При умові перерахування коштів на рахунок продавця нерухомості
+        </p>
+
+        <a target="_blank" href="https://www.ukrgasbank.com/private/credits/ipotek_credit/ipoteka_credits/re_loyal" class="href-block">
+          <p class="href-block__text">
+            Детальні умови програми
+          </p>
+        </a>
+      </div>
+
+      <div class="block-itd">
+          <div class="block1-itd">
+            <table>
+              <tr>
+                <td><img src="img/icon1.png" alt=""/></td>
+                <td><p class="block-itd__title">максимальний термін кредитування – до 20 років </p></td>
+              </tr>
+            </table>
+            <p class="block-itd__descriptions">
+
+            </p>
+          </div>
+          <div class="block1-itd">
+            <table>
+              <tr>
+                <td><img src="img/icon2.png" alt=""/></td>
+                <td><p class="block-itd__title">максимальна сума кредитування – 5 млн грн </p></td>
+              </tr>
+            </table>
+            <p class="block-itd__descriptions">
+              (сума кредиту, більша 5 000 000 грн., погоджується індивідуально)
+            </p>
+          </div>
+          <div class="block1-itd">
+            <table>
+              <tr>
+                <td><img src="img/icon3.png" alt=""/></td>
+                <td><p class="block-itd__title">Реальна річна відсоткова
+                  ставка - 16,68% річних у грн</p></td>
+              </tr>
+            </table>
+            <p class="block-itd__descriptions">
+              (включаючи платежі за додаткові і супутні послуги банку та третіх осіб, пов'язані з отриманням,
+              обслуговуванням і поверненням кредиту при вартості нерухомості  1 млн грн,
+              строком кредитування на 20 років та власному  внеску 30%, схема погашення класична (розрахунок зроблено станом на 29.07.2020р).
+              Реальна річна відсоткова ставка залежить від обраних клієнтом умов кредитування та розміру UIRD12М на дату розрахунку.
+              Детальні умови кредитування на сайті www.ukrgasbank.com– розділ «Приватним клієнтам – Кредити – Іпотечні кредити – Житло в кредит
+              вторинний ринок (лояльні умови) або за телефоном: 0 800 309 000 (дзвінки безкоштовні у межах України).
+
+
+            </p>
+          </div>
+      </div>
+
+
+
+
+
+      <!--      <div class="flex-container icons-container icons-container2">-->
+<!--        <div>-->
+<!--          <img src="img/icon1.png" alt="gray-icon">-->
+<!--          <h4>-->
+<!--           <span class="text-icon-title12">-->
+<!--              максимальний термін <br>-->
+<!--              кредитування – до 20 років-->
+<!--           </span>-->
+
+
+<!--          </h4>-->
+<!--        </div>-->
+<!--        <div  style="position: relative">-->
+<!--          <img src="img/icon2.png" alt="gray-icon">-->
+<!--          <h4>-->
+<!--            <span class="text-icon-title">-->
+<!--              максимальна сума <br>-->
+<!--              кредитування – 5 млн грн-->
+<!--            <br>-->
+<!--          </span>-->
+
+<!--          </h4>-->
+<!--          <p class="icons-container__description">-->
+<!--            (сума кредиту, більша 5 000 000 грн.,-->
+<!--            погоджується індивідуально)-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <div style="position: relative">-->
+<!--          <img src="img/icon3.png" alt="gray-icon">-->
+<!--          <h4>-->
+<!--            <span class="text-icon-title1">-->
+<!--              Реальна річна відсоткова <br>-->
+<!--              ставка - 15,38% річних у грн-->
+<!--            </span>-->
+<!--            <br>-->
+
+<!--          </h4>-->
+<!--          <p class="icons-container__description1">-->
+<!--            Реальна річна відсоткова ставка - 16,38% річних у грн (включаючи платежі за додаткові і супутні послуги банку та третіх осіб, пов'язані з отриманням,-->
+<!--            обслуговуванням і поверненням кредиту при вартості нерухомості  1 млн грн, строком кредитування на 20 років та власному  внеску 30%,-->
+<!--            схема погашення класична (розрахунок зроблено станом на 29.07.2020р).-->
+<!--            Реальна річна відсоткова ставка залежить від обраних клієнтом умов кредитування та розміру UIRD12М на дату розрахунку.-->
+<!--            Детальні умови кредитування на сайті www.ukrgasbank.com– розділ «Приватним клієнтам – Кредити – Іпотечні кредити – Житло в кредит вторинний ринок-->
+<!--            (лояльні умови) або за телефоном: 0 800 309 000 (дзвінки безкоштовні у межах України).-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+
+
+<!--      <p class="text-right block-text-right ">*Розрахунок зроблено станом на 29.07.2020р.</p>-->
+
+      <div class="uird-block count-zayaz elem213">
+        <div class="count-zayaz__title">КІЛЬКІСТЬ ЗАЯВОК НА ЖИТЛО:</div>
+<!--        <div class="count-zayaz__count">-->
+<!--          <div class="num">1</div>-->
+<!--          <div class="num">6</div>-->
+<!--          <div class="num">3</div>-->
+<!--          <div class="num">2</div>-->
+<!--        </div>-->
+
+
+        <div class="count-zayaz__count uls">
+
+
+<!--          <div class="num number12" data-max="5">0</div>-->
+<!--          <div class="num number13" data-max="2">0</div>-->
+<!--          <div class="num number14" data-max="2">0</div>-->
+<!--          <div class="num number15" data-max="5">0</div>-->
+          <div class="num number12" data-max="5">0</div>
+          <div class="num">0</div>
+          <div class="num number13" data-max="2">0</div>
+          <div class="num number14" data-max="5">0</div>
+
+        </div>
+      </div>
+
+
+
+
+
+      <div class="block-uird">
+        <div class="block-uird__title">UIRD 12M – Український індекс ставок за депозитами фізичних осіб</div>
+        <div class="block-uird__icons-text">
+          <div class="block-uird__icons-text-one">
+            <table>
+              <tr>
+                <td><img src="img/vopros3.png"/></td>
+                <td><p class="block-uird__text-title">Що таке індекс UIRD?</p></td>
+              </tr>
+            </table>
+            <p class="block-uird__text-desc">
+              UIRD – це індекс депозитних ставок, які пропонують провідні банки для українців.
+              Для його розрахунку розроблена ціла методика та в цілому це – середнє ринкове значення депозитних ставок.
+              Індекс розраховується щодня і публікується на сайті НБУ, тож кожен може за ним слідкувати ось тут <a href="https://bank.gov.ua/ua/statistic/sector-financial/data-sector-financial"> https://bank.gov.ua/ua/statistic/sector-financial/data-sector-financial</a>
+              <br>
+              <br>
+              Важливо розуміти, що чим нижчими стають ставки за депозитами, тим нижчим буде значення UIRD.
+            </p>
+          </div>
+          <div class="block-uird__icons-text-one">
+            <table>
+              <tr>
+                <td><img src="img/vopros3.png"/></td>
+                <td><p class="block-uird__text-title">Від чого залежить UIRD?</p></td>
+              </tr>
+            </table>
+            <p class="block-uird__text-desc">
+              Це такий собі «індикатор» стабільності в країні – темпу економічного росту, рівня інфляції тощо.
+              Показники поступово зростають, економіка України міцнішає і це, зрештою, призводить до зниження депозитних ставок, що,
+              безумовно, є позитивним сигналом для населення. А оскільки банки менше платитимуть за депозитами,
+              це дозволить їм знизити і кредитні ставки. Тобто – банківські «позики» стають дешевшими, коли знижуються їхні депозитні ставки.
+              <br>
+              <br>
+              Така позитивна тенденція спостерігається ще з 2015 року і має всі необхідні економічні передумови для продовження.
+            </p>
+          </div>
+          <div class="block-uird__icons-text-one">
+            <table>
+              <tr>
+                <td><img src="img/vopros3.png"/></td>
+                <td><p class="block-uird__text-title">Як розраховуватиметься ставка з
+                  другого року кредитування?</p></td>
+              </tr>
+            </table>
+            <p class="block-uird__text-desc">
+              Дуже просто – вона розраховується так: значення UIRD12M+5%, де 5% – така собі «страховка» банку, якщо показник UIRD стане мінімальним.
+              Наприклад, зараз ставка на другий рік кредитування склала б 13,42%.
+<br>
+<br>
+              Враховуючи динаміку останніх років, то ця ставка може й надалі знижуватися.
+<!--              От погляньте на графік, як змінювався показник UIRD з року в рік:-->
+              От погляньте на графік, як змінювався цей показник останні місяці з початку року.
+              Минулого року (у 2019) наприкінці липня UIRD був 15,71%.
+
+
+            </p>
+          </div>
+        </div>
+        <div class="block-uird__img">
+          <img src="img/uird-img.png" alt=""/>
+        </div>
+
+<!--        <div class="block-uird__desc">-->
+<!--          <b>«UIRD 12M UAH»</b> <span class="block-uird__desc-text"> - український індекс ставок за депозитами фізичних осіб (англ. Ukrainian Index of Retail Deposit Rates, скорочено - UIRD)-->
+<!--          — індикативна ставка, що розраховується в системі Томсон Рейтерс (Thomson Reuters) за методикою розробленою спільно з Національним Банком України,-->
+<!--          на основі номінальних ставок ринку депозитів фізичних осіб на строк 12 місяців в гривні, який фіксується Банком, починаючи  з другого року кредитування,-->
+<!--          в перший банківський день календарного місяця, що передує місяцю перегляду процентної ставки.-->
+<!--          Дані про величину індексу UIRD є загальнодоступними в мережі інтернет на офіційному сайті Національного Банку України <a target="_blank" href="http://www.bank.gov.ua">http://www.bank.gov.ua</a>.</span>-->
+<!--        </div>-->
+      </div>
+    </div>
+
+
+    <footer>
+      <div class="wrapper">
+        <div class="flex-container">
+          <div class="info">
+            <img class="car" src="img/home-img4.png" alt="green-car" />
+          </div>
+          <form class="contact-form">
+            <span class="title-form">ПОДАТИ ЗАЯВУ</span>
+            <br />
+            <p>
+              <b>
+                <input type="text" placeholder="Ім'я*" name="name" />
+              </b>
+              <b class="contact-form__item"
+                ><input type="text" placeholder="Телефон*" name="phone" />
+                <b class="contact-form__error"
+                  >Неправильно вказаний телефон</b
+                ></b
+              >
+            </p>
+            <p class="contact-form__row2">
+              <b class="contact-form__item"
+                ><input type="text" placeholder="Email" name="email" />
+                <b class="contact-form__error">Неправильно вказана пошта</b></b
+              >
+              <b
+                ><input type="text" placeholder="Коментарі" name="comments"
+              /></b>
+            </p>
+            <b class="contact-form__mandatory">*Обов’язкові поля</b>
+
+            <p class="contact-form__check-box">
+               <input type="checkbox" name="option4" value="a4">
+                  <span class="contact-form__data-title">
+                     Я даю згоду на обробку та використання<Br>
+                    моїх персональних даних
+                  </span>
+            </p>
+
+            <div class="contacts-form__submit-wrap">
+              <button class="contacts-form__submit-btn" type="submit">
+                Відправити
+              </button>
+              <p class="contacts-form__status-message">
+                Дякуємо за заявку. Ми зв'яжемося з Вами найближчим часом.
+              </p>
+            </div>
+          </form>
+        </div>
+        <div class="liscence">
+          <!--        <div>-->
+          <!--          <p>Максимальний термін кредитування - 84 місяці, максимальна сума кредитування – 1 500 000 грн. (сума кредиту, більша 1 500 000 грн., погоджується індивідуально).-->
+
+          <!--          </p>-->
+          <!--          <p>Реальна ефективна відсоткова ставка становить від 4,78% до 14,64% річних і залежить від обраних споживачем умов кредитування.-->
+
+          <!--          </p>-->
+          <!--          <p>Кредит надається у відділеннях Банку по всій території України за винятком тимчасово окупованої території АР Крим та зони проведення АТО.-->
+
+          <!--          </p>-->
+          <!--          <p>Банк залишає за собою право змінювати умови кредитування. Про детальні умови кредитування дізнавайтеся на сайті www.ukrgasbank.com-->
+          <!--          </p>-->
+          <!--        </div>-->
+          <div class="footer-right">
+            <!--          <p class="politics"><a href="https://www.ukrgasbank.com/confidence">Політика конфіденційності</a></p>-->
+            <p class="politics"><a href="https://www.ukrgasbank.com/confidence">Політика конфіденційності</a></p>
+
+            <p>Ліцензія НБУ № 123 від 06.10.2011 року</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/circle-animation.js"></script>
+    <script src="js/jqeury.validate.min.js"></script>
+    <script src="js/main.js"></script>
+
+<!--    счетчик-->
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>-->
+<!--    <script>-->
+<!--      $(".num").counterUp({delay:10,time:500});
+     </script>-->
+
+
+
+  </body>
+</html>
